@@ -1,0 +1,11 @@
+{
+  "name": "snips.co context menu",
+  "description": "Snips selected elements!",
+  "version": "0.1",
+  "permissions": ["contextMenus","tabs","http://*/*"],
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon.png"
+  }
+}

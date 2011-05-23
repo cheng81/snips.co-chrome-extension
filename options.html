@@ -1,0 +1,39 @@
+<html>
+<head><title>Snips.co Extension Options</title></head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+	var sid = document.getElementById("sid").value
+  localStorage["snipsid"] = sid;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+	var sid = localStorage["snipsid"]
+  if (!sid) {
+    return;
+  }
+	document.getElementById("sid").value=sid
+}
+
+</script>
+
+<body onload="restore_options()">
+
+<div id="status"></div>
+
+Snips ID (check in your Bookmarklet!):
+<br/>
+<input type="text" name="sid" id="sid" />
+<br/>
+<button onclick="save_options()">Save</button>
+</body>
+</html>
